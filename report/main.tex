@@ -1,0 +1,38 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+
+
+
+\begin{document}
+
+\maketitle
+
+\noindent
+\textbf{Theorem}: There exists a support line for a time series data. For a given support line $L_s$, $(g_1,L(g_1))\in C(A \cap L_s)$, where $(g_1,S_{g_1})$ is the center of gravity of $\{ S_t\}$. Furthermore, let $t^*=argmin S_t$ and $t^*\ne g_1$, then the support line is unique.\\
+
+\noindent
+\textbf{Proof}: $A=\{(t,S_t)|1\leq t\leq N\}$, $\# A<\infty$\\
+$S_{t^*}=min\{ S_t\}$\\
+Consider the line $L:y=S_{t^*}$.\\
+
+\textbf{Case 1}: $t^*<g_1$\\
+$X_o=\{(t,S_t)|t\geq g_1\}$\\
+We rotate the line $L$ in counter clockwise direction.
+Let $\theta_o$ be the angle rotated such that the first $t_1\in X_o$ satisfies the equation of line $L$.\\
+\textbf{Subcase 1}: $t_1>g_1$\\
+In this case, we have found the required support.\\
+\textbf{Subcase 2}: $t_1<g_1$\\
+We replace $t^*$ by $t_1$ and repeat the same procedure until we get $t\in X_o$. We are guaranteed to find such a $t$ as $A$ is a finite set.\\
+
+\textbf{Case 2}: $t^*>g_1$\\
+$Y_o=\{(t,S_t)|t\leq g_1\}$\\
+We rotate the line $L$ in clockwise direction. Let $\omega_o$ is the angle rotated such that first $t_1\in Y_o$ satisfies the equation of line $L$. Following similar arguments as above, we can establish that a support line exists.\\
+
+\textbf{Case 3}:$t^*=g_1$\\
+In this case, we consider all the points in the set $A\ \{g_1\}$. Following the same procedure as above, we get a support line for $\{S_t\}$.\\
+
+\noindent
+We now prove the uniqueness of the support when $t^*\ne g_1$.
+By the definition of support, we know that all the points of $\{S_t\}$ must lie above the support. Also, by the hypothesis condition we have, $(g_1,L(g_1))\in C(A \cap L_s)$. Therefore, the support line is unique.
+\end{document}
