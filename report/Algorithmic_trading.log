@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.8.6)  3 OCT 2018 09:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.8.6)  4 OCT 2018 23:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -454,35 +454,69 @@ LaTeX Info: Redefining \addtolength on input line 81.
 Package: ulem 2012/05/18
 \ULdepth=\dimen166
 )
+(/usr/share/texlive/texmf-dist/tex/latex/appendix/appendix.sty
+Package: appendix 2009/09/02 v1.2b extra appendix facilities
+\c@@pps=\count126
+\c@@ppsavesec=\count127
+\c@@ppsaveapp=\count128
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count129
+\lst@gtempboxa=\box42
+\lst@token=\toks36
+\lst@length=\count130
+\lst@currlwidth=\dimen167
+\lst@column=\count131
+\lst@pos=\count132
+\lst@lostspace=\dimen168
+\lst@width=\dimen169
+\lst@newlines=\count133
+\lst@lineno=\count134
+\lst@maxwidth=\dimen170
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+\c@lstnumber=\count135
+\lst@skipnumbers=\count136
+\lst@framebox=\box43
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2015/06/04 1.6 listings configuration
+))
+Package: listings 2015/06/04 1.6 (Carsten Heinz)
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
 (./Algorithmic_trading.aux)
 \openout1 = `Algorithmic_trading.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count126
-\scratchdimen=\dimen167
-\scratchbox=\box42
-\nofMPsegments=\count127
-\nofMParguments=\count128
-\everyMPshowfont=\toks36
-\MPscratchCnt=\count129
-\MPscratchDim=\dimen168
-\MPnumerator=\count130
-\makeMPintoPDFobject=\count131
-\everyMPtoPDFconversion=\toks37
+\scratchcounter=\count137
+\scratchdimen=\dimen171
+\scratchbox=\box44
+\nofMPsegments=\count138
+\nofMParguments=\count139
+\everyMPshowfont=\toks37
+\MPscratchCnt=\count140
+\MPscratchDim=\dimen172
+\MPnumerator=\count141
+\makeMPintoPDFobject=\count142
+\everyMPtoPDFconversion=\toks38
 ) ABD: EveryShipout initializing macros
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
@@ -532,6 +566,8 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
+\c@lstlisting=\count143
+
 
 LaTeX Warning: No \author given.
 
@@ -547,7 +583,7 @@ f>
 (epstopdf)                    size: 40791 bytes
 (epstopdf)             Command: <repstopdf --outfile=apple_c_plot_latex_raw-eps
 -converted-to.pdf apple_c_plot_latex_raw.eps>
-(epstopdf)             \includegraphics on input line 66.
+(epstopdf)             \includegraphics on input line 94.
 Package epstopdf Info: Output file is already uptodate.
 
 <apple_c_plot_latex_raw-eps-converted-to.pdf, id=16, 521.95pt x 370.38374pt>
@@ -555,7 +591,7 @@ File: apple_c_plot_latex_raw-eps-converted-to.pdf Graphic file (type pdf)
 
 <use apple_c_plot_latex_raw-eps-converted-to.pdf>
 Package pdftex.def Info: apple_c_plot_latex_raw-eps-converted-to.pdf used on in
-put line 66.
+put line 94.
 (pdftex.def)             Requested size: 234.87532pt x 166.67113pt.
 
 
@@ -570,61 +606,106 @@ Package epstopdf Info: Source file: <max_supp.eps>
 (epstopdf)                    size: 23841 bytes
 (epstopdf)             Command: <repstopdf --outfile=max_supp-eps-converted-to.
 pdf max_supp.eps>
-(epstopdf)             \includegraphics on input line 97.
+(epstopdf)             \includegraphics on input line 125.
 Package epstopdf Info: Output file is already uptodate.
 
 <max_supp-eps-converted-to.pdf, id=40, 429.605pt x 304.13625pt>
 File: max_supp-eps-converted-to.pdf Graphic file (type pdf)
 
 <use max_supp-eps-converted-to.pdf>
-Package pdftex.def Info: max_supp-eps-converted-to.pdf used on input line 97.
+Package pdftex.def Info: max_supp-eps-converted-to.pdf used on input line 125.
 (pdftex.def)             Requested size: 193.32045pt x 136.86003pt.
 
 <cogs_minimize.png, id=41, 532.99126pt x 374.39874pt>
 File: cogs_minimize.png Graphic file (type png)
  <use cogs_minimize.png>
-Package pdftex.def Info: cogs_minimize.png used on input line 107.
+Package pdftex.def Info: cogs_minimize.png used on input line 135.
 (pdftex.def)             Requested size: 312.00119pt x 219.16806pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [4 <./max_supp-eps-converted-to.pdf>] [5 <./cogs_minimize.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 144--146
+Underfull \hbox (badness 10000) in paragraph at lines 172--174
 
  []
 
-[6] (./Algorithmic_trading.aux) ) 
+[6] <empirical_cdf_representative.jpeg, id=64, 1103.12125pt x 672.5125pt>
+File: empirical_cdf_representative.jpeg Graphic file (type jpg)
+
+<use empirical_cdf_representative.jpeg>
+Package pdftex.def Info: empirical_cdf_representative.jpeg used on input line 1
+99.
+(pdftex.def)             Requested size: 312.00119pt x 190.21089pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 209--211
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 212--216
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 217--225
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 226--229
+
+ []
+
+[8 <./empirical_cdf_representative.jpeg>]
+Underfull \hbox (badness 10000) in paragraph at lines 230--232
+
+ []
+
+[9] <emp_cdf_apple_c.jpg, id=76, 642.4pt x 481.8pt>
+File: emp_cdf_apple_c.jpg Graphic file (type jpg)
+ <use emp_cdf_apple_c.jpg>
+Package pdftex.def Info: emp_cdf_apple_c.jpg used on input line 245.
+(pdftex.def)             Requested size: 312.00119pt x 234.00354pt.
+
+[10 <./emp_cdf_apple_c.jpg>] [11] [12] [13] [14] [15]
+(./Algorithmic_trading.aux) ) 
 Here is how much of TeX's memory you used:
- 12717 strings out of 494953
- 251816 string characters out of 6180978
- 289573 words of memory out of 5000000
- 15732 multiletter control sequences out of 15000+600000
- 11619 words of font info for 42 fonts, out of 8000000 for 9000
+ 14276 strings out of 494953
+ 273946 string characters out of 6180978
+ 372489 words of memory out of 5000000
+ 17267 multiletter control sequences out of 15000+600000
+ 12408 words of font info for 45 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 62i,9n,56p,1154b,287s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
-6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on Algorithmic_trading.pdf (6 pages, 311635 bytes).
+ 62i,9n,72p,1154b,1681s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex
+10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on Algorithmic_trading.pdf (15 pages, 415827 bytes).
 PDF statistics:
- 123 PDF objects out of 1000 (max. 8388607)
- 87 compressed objects within 1 object stream
+ 164 PDF objects out of 1000 (max. 8388607)
+ 114 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 28 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 38 words of extra memory for PDF output out of 10000 (max. 10000000)
 

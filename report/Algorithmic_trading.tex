@@ -4,6 +4,34 @@
 \usepackage{todonotes}
 \usepackage{graphicx}
 \usepackage[normalem]{ulem}
+\usepackage[title]{appendix}
+
+% In order to ensure Code syntaxing is done right
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+
+\lstset{frame=tb,
+	language=Python,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3
+}
+
 
 
 % The follwing changes the margin text size
@@ -144,7 +172,255 @@
 	The equation of resistance can then be obtained by a similar approach \marginpar{refer to footnote 9}.
 	\linebreak
 	
-	\textbf{Empirical Distribution of $\delta^+(l)$ and $\delta^-(l)$}: blah balah basjkahdkjhka
+	\textbf{Empirical Distribution of $\delta^+(l)$ and $\delta^-(l)$}: It is important to revisit the motivation for the preceeding analysis. We essentially desired a way using which we could check the reliability of the trendlines obtained. What we essentially mean by the term reliability is, how long (i.e, for how many time steps) will the price movements be contained within the spread of lines of support and resistance. Extending this idea a bit more, we choose to analyse the data in varying slices while keeping a some parameter, constant, throughout the duration of the analysis. 
+	\paragraph{}
+	For example, if we are given soem data series with 200 data points, recall, we had initially endeavored to compute the trendlines given some particular value of $l$, the lag parameter. Lets, for the sake of this example, assume that the chosen value of $l$ is 50. Then it follows that we could have constructed trendlines for the data in any of the 150 $sliding$ $windows$ created\footnote{Add a representative figure???}. Thus, we can have a total of 150 such pairs of trendlines for the given value of $l$. We formalize this in the following paragraph.
+	
+	\paragraph{}
+	Given any value of $l$, we say $\delta^+(l)$ represents the number of time steps the data series has obeyed the computed resistance trendline. Analogously, we say, $\delta^-(l)$ represents the number of time steps the data series obeys the computed support trendline. As discussed in the preceeding section, for a given value of $l$, the values taken by $\delta^+(l)$ and $\delta^-(l)$ are treated as random series, i.e, 
+	$$\delta^+(l) = \{\delta^+(l)_l, \delta^+(l)_{l-1}, ... \delta^+(l)_{n-l}\} \; $$
+	$$\delta^-(l) = \{\delta^-(l)_l, \delta^-(l)_{l-1}, ... \delta^-(l)_{n-l}\}$$ 
+	
+	In order to qualitatively deal with the data inferred from the series above, we first lay the define a few more terms. 
+	
+	\paragraph{}
+	We first define what a cumulative distribution function (CDF) is. Mathematically, a CDF of a real valued random variable $X$ is the probability that $X$ will take a value less than or equal to $X$. i.e, 
+	$$F_X(x) = P(X \leq x)$$  
+	
+	We next define \textit{Empirical Distribution} as the CDF associated with the empirical measure of a sample. i.e, it is a step function that jumps up by $\frac{1}{n}$ at each of the $n$ data points. The value of the empirical distribution at any point is the fraction of observed values that are equal to or lessor than the chosen point. Mathematically, given a set $(x_1, x_2, ..., x_n)$ such that all $x_i\; \epsilon \; F_X(x)$ 
+	$$\hat{F}_n (t) = \frac{\text{number of elements in sample}\; \leq\; t}{n} = \frac{1}{n}\sum_{i = 1}^{n} \textbf{1}_{x_{i} \leq t}  $$  
+	where $\textbf{1}_A$ is the indicator function. A sample empirical distribution plot has been attached.
+	
+	\paragraph{}
+	If $\{y_{(1)}, y_{(2)}, ..., y_{(n)}\}$ is an ordered set; the empirical distribution would look like :-
+
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.8\textwidth]{empirical_cdf_representative}
+		\caption{Representative CDF for an ordered set of $n$ iid's.}
+		\label{Figure 4}
+	\end{figure}
+	
+	\pagebreak
+	
+	\section{TO BE EDITED P1: Srishti}
+	
+	
+	\noindent
+	\textbf{Theorem}: There exists a support line for a time series data. For a given support line $L_s$, $(g_1,L(g_1))\in C(A \cap L_s)$, where $(g_1,S_{g_1})$ is the center of gravity of $\{ S_t\}$. Furthermore, let $t^*=argmin S_t$ and $t^*\ne g_1$, then the support line is unique.\\
+	
+	\noindent
+	\textbf{Proof}: $A=\{(t,S_t)|1\leq t\leq N\}$, $\# A<\infty$\\
+	$S_{t^*}=min\{ S_t\}$\\
+	Consider the line $L:y=S_{t^*}$.\\
+	
+	\textbf{Case 1}: $t^*<g_1$\\
+	$X_o=\{(t,S_t)|t\geq g_1\}$\\
+	We rotate the line $L$ in counter clockwise direction.
+	Let $\theta_o$ be the angle rotated such that the first $t_1\in X_o$ satisfies the equation of line $L$.\\
+	\textbf{Subcase 1}: $t_1>g_1$\\
+	In this case, we have found the required support.\\
+	\textbf{Subcase 2}: $t_1<g_1$\\
+	We replace $t^*$ by $t_1$ and repeat the same procedure until we get $t\in X_o$. We are guaranteed to find such a $t$ as $A$ is a finite set.\\
+	
+	\textbf{Case 2}: $t^*>g_1$\\
+	$Y_o=\{(t,S_t)|t\leq g_1\}$\\
+	We rotate the line $L$ in clockwise direction. Let $\omega_o$ is the angle rotated such that first $t_1\in Y_o$ satisfies the equation of line $L$. Following similar arguments as above, we can establish that a support line exists.\\
+	
+	\textbf{Case 3}:$t^*=g_1$\\
+	In this case, we consider all the points in the set $A\ \{g_1\}$. Following the same procedure as above, we get a support line for $\{S_t\}$.\\
+	
+	\noindent
+	We now prove the uniqueness of the support when $t^*\ne g_1$.
+	By the definition of support, we know that all the points of $\{S_t\}$ must lie above the support. Also, by the hypothesis condition we have, $(g_1,L(g_1))\in C(A \cap L_s)$. Therefore, the support line is unique.
+	
+	
+	
+	\pagebreak
+	
+	\section{TO BE EDITED P2: Purva}
+	
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[width=0.8\textwidth]{emp_cdf_apple_c}
+			\caption{CDF Obtained after simulation}
+			\label{Figure 5}
+		\end{figure}
+		
+	
+	\pagebreak
+
+
+	\begin{appendices}
+			\section{Code for generating the cdf}
+			
+			
+			\begin{lstlisting}
+			import numpy as np
+			import math
+			import pandas as pd
+			import matplotlib.pyplot as plt 
+			#Given l and time t, find out the support and resistance by finding out the time points, through which the lines should pass.    
+			#col is the input vector of time series. 
+			# The output is a vector m[0,1,2,3] where m[1] is a list containing the time points so that the support line is obtained by joining (m[1][0],col[m[1][0]]) and (m[1][1], col[m[1][1]]). 
+			# m[0] gives the distance of CG from the support line. 
+			# Similarly m[2] gives the distance of CG from the resistance line and m[3] gives the resistance line.
+			
+			#defining function SnR
+			def SnR(data,t,l):
+			cond1=[[0 for x in range(l+1)] for y in range(l+1)]
+			cond2=[[0 for x in range(l+1)] for y in range(l+1)]
+			J=0
+			m=[0 for x in range(4)]
+			x=list(data[t-l:t+1])
+			g=[t-0.5*l,sum(x)/(l+1)]
+			m[0]=10**8
+			m[2]=10**8
+			if l%2==1:
+			for i in range(0, math.floor(l/2)+1):
+			for j in range(math.floor(l/2)+1,l+1):
+			if i-j==0:
+			continue
+			a=np.abs((x[i]-x[j])*g[0]-(i-j)*g[1]+ (x[j]*i-x[i]*j))
+			b=np.sqrt((x[i]-x[j])**2+(i-j)**2)
+			J=a/b
+			C= (x[i]-x[j])/(i-j)
+			for k in range (0,l+1):
+			if x[k]< x[j]+C*(k-j):
+			cond1[i][j]+=1
+			elif x[k]== x[j]+C*(k-j):
+			cond2[i][j]+=1
+			if cond1[i][j]==0:
+			m[0]=min(m[0],J)
+			if m[0]==J:
+			m[1]=[i,j]
+			elif cond1[i][j]+cond2[i][j]==l:
+			m[2]=min(m[2],J)
+			if m[2]==J:
+			m[3]=[i,j]
+			if l%2==0:
+			for i in range(0, math.floor(l/2)+1):
+			for j in range(math.floor(l/2),l+1):
+			a=np.abs((x[i]-x[j])*g[0]-(i-j)*g[1]+ (x[j]*i-x[i]*j))
+			b=np.sqrt((x[i]-x[j])**2+(i-j)**2)
+			J=a/b
+			C= (x[i]-x[j])/(i-j)
+			for k in range (0,l+1):
+			if x[k]< x[j]+C*(k-j):
+			cond1[i][j]+=1
+			elif x[k]== x[j]+C*(k-j):
+			cond2[i][j]+=1
+			if cond1[i][j]== 0:
+			m[0]=min(m[0],J)
+			if m[0]==J:
+			m[1]=[i,j]
+			elif cond1[i][j]+cond2[i][j]==l:
+			m[2]=min(m[2],J)
+			if m[2]==J:
+			m[3]=[i,j]
+			m[1][0]+=t-l
+			m[1][1]+=t-l
+			m[3][0]+=t-l
+			m[3][1]+=t-l
+			x1, y1 = m[1],[data[m[1][0]],data[m[1][1]]]
+			x2, y2 = m[3],[data[m[3][0]],data[m[3][1]]]
+			return [x1,y1,x2,y2]
+			
+			#defining function to compute delta
+			def delta(data,t,l,x_sup, y_sup, x_res, y_res):
+			x=list(data[t-l:t+1])
+			# for calculating delta_plus (based on resistance equation)
+			for i in range(t+1, len(data)):
+			L_plus = y_res[1] + ((y_res[1]-y_res[0])*(i-x_res[1])/(x_res[1]-x_res[0]))
+			if data[i] > L_plus:
+			break
+			if i >= t+l+1:
+			i = min(i,l)
+			delta_plus = i
+			else:
+			delta_plus = i-t-1
+			
+			#for calculating delta_minus (based on support equation)
+			for j in range(t+1, len(data)):
+			L_minus = y_sup[1] + ((y_sup[1]-y_sup[0])*(j-x_sup[1])/(x_sup[1]-x_sup[0]))
+			if data[i] < L_minus:
+			break
+			if j >= t+l+1:
+			j = min(j,l)
+			delta_minus = l
+			else:
+			delta_minus = j-t-1
+			return [delta_plus,delta_minus]
+			
+			#defining function to determine the empirical distribution of delta_plus and delta_minus
+			def emp_delta(delta_plus_list, delta_minus_list): #delta_plus_list and delta_minus_list are arrays containing delta values for t = l, l+1, ... , N
+			A = sorted(delta_plus_list)
+			B = sorted(delta_minus_list)
+			F_delta_plus = [0 for x in range(max(delta_plus_list)+1)]
+			F_delta_minus = [0 for x in range(max(delta_minus_list)+1)]
+			#empirical distribution of delta_plus
+			for k in range(max(delta_plus_list)+1):
+			count1 = 0
+			for i in range(len(A)):
+			if A[i]<= k:
+			count1 = count1 +1
+			else:
+			break
+			F_delta_plus[k] = count1/(len(delta_plus_list))
+			
+			#empirical distribution of delta_minus
+			for k in range(max(delta_minus_list)+1):
+			count = 0
+			for j in range(len(B)):
+			if B[j]<= k:
+			count = count +1
+			else:
+			break
+			F_delta_minus[k] = count/(len(delta_minus_list))
+			return [F_delta_plus, F_delta_minus]
+			
+			#calling the functions	
+			
+			data = pd.read_csv('/Datasets/apple_c.csv')
+			y = data['Close']
+			l = 20
+			delta_plus = [0 for z in range(l,len(y)-l)]
+			delta_minus = [0 for z in range(l,len(y)-l)]
+			for t in range(l+1,len(y)-l):
+			[x1,y1,x2,y2] = SnR(y, t, l)
+			[a,b] = delta(y,t,l,x1,y1,x2,y2)
+			delta_plus[t-20] = a
+			delta_minus[t-20] = b
+			
+			[emp_delta_plus, emp_delta_minus] = emp_delta(delta_plus, delta_minus)
+			emp_delta_plus = list(np.around(np.array(emp_delta_plus),3))
+			emp_delta_minus = list(np.around(np.array(emp_delta_minus),3))
+			
+			print ("Delta_plus = ", delta_plus)
+			print ("Delta_minus = ", delta_minus)
+			print ("Empirical distribution of Delta_plus = ", emp_delta_plus)
+			#print (len(emp_delta_plus))
+			print ("Empirical distribution of Delta_minus = ", emp_delta_minus)
+			#print (len(emp_delta_minus))
+			
+			#plotting the cdf
+			x = []
+			for i in range(l+1):
+			x.append(i)
+			plt.plot(x,emp_delta_plus, label = 'for resistance')
+			plt.plot(x,emp_delta_minus, label = 'for support')
+			plt.xlabel('x')
+			plt.ylabel('empirical cdf')
+			plt.title = 'Graph of empirical cdf of delta values for support and resistance'
+			plt.xlim(0,l)
+			plt.ylim(0,1)
+			plt.legend()
+			plt.show()
+			\end{lstlisting}
+			
+	\end{appendices}
+
+
 	 	
 	
 
