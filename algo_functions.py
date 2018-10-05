@@ -15,48 +15,64 @@ def SnR(data,t,l):
 	J=0
 	m=[0 for x in range(4)]
 	x=list(data[t-l:t+1])
+	print("x = ", x)
 	g=[t-0.5*l,sum(x)/(l+1)]
+	print("g = ", g)
 	m[0]=10**8
 	m[2]=10**8
 	if l%2==1:
 		for i in range(0, math.floor(l/2)+1):
 			for j in range(math.floor(l/2)+1,l+1):
-				if i-j==0:
-					continue
 				a=np.abs((x[i]-x[j])*g[0]-(i-j)*g[1]+ (x[j]*i-x[i]*j))
+				print("a = ", a)
 				b=np.sqrt((x[i]-x[j])**2+(i-j)**2)
+				print("b = ", b)
 				J=a/b
+				print("J = ",J)
 				C= (x[i]-x[j])/(i-j)
 				for k in range (0,l+1):
 					if x[k]< x[j]+C*(k-j):
 						cond1[i][j]+=1
 					elif x[k]== x[j]+C*(k-j):
 						cond2[i][j]+=1
+				print(cond1[i][j],cond2[i][j])
 				if cond1[i][j]==0:
+					print(J)
 					m[0]=min(m[0],J)
 					if m[0]==J:
 						m[1]=[i,j]
 				elif cond1[i][j]+cond2[i][j]==l:
+					print(J)
 					m[2]=min(m[2],J)
 					if m[2]==J:
 						m[3]=[i,j]
 	if l%2==0:
 		for i in range(0, math.floor(l/2)+1):
 			for j in range(math.floor(l/2),l+1):
+				if i-j==0:
+					cond1[i][j] = 2*l
+					cond2[i][j] = 2*l
+					continue
 				a=np.abs((x[i]-x[j])*g[0]-(i-j)*g[1]+ (x[j]*i-x[i]*j))
+				print("a = ", a)
 				b=np.sqrt((x[i]-x[j])**2+(i-j)**2)
+				print("b = ", b)
 				J=a/b
+				print("J = ",J)
 				C= (x[i]-x[j])/(i-j)
 				for k in range (0,l+1):
 					if x[k]< x[j]+C*(k-j):
 						cond1[i][j]+=1
 					elif x[k]== x[j]+C*(k-j):
 						cond2[i][j]+=1
-				if cond1[i][j]== 0:
+				print(cond1[i][j],cond2[i][j])
+				if cond1[i][j]==0:
+					print(J)
 					m[0]=min(m[0],J)
 					if m[0]==J:
 						m[1]=[i,j]
 				elif cond1[i][j]+cond2[i][j]==l:
+					print(J)
 					m[2]=min(m[2],J)
 					if m[2]==J:
 						m[3]=[i,j]
@@ -123,12 +139,13 @@ def emp_delta(delta_plus_list, delta_minus_list): #delta_plus_list and delta_min
 
 #calling the functions	
 
-data = pd.read_csv('/home/csjoshi/Documents/SemProject/Datasets/apple_c.csv')
+data = pd.read_csv('/home/csjoshi/Documents/SemProject/Datasets/bse_c.csv')
 y = data['Close']
 l = 20
 delta_plus = [0 for z in range(l,len(y)-l)]
 delta_minus = [0 for z in range(l,len(y)-l)]
 for t in range(l+1,len(y)-l):
+	print(t)
 	[x1,y1,x2,y2] = SnR(y, t, l)
 	[a,b] = delta(y,t,l,x1,y1,x2,y2)
 	delta_plus[t-20] = a
