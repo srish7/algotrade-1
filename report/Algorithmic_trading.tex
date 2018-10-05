@@ -5,6 +5,8 @@
 \usepackage{graphicx}
 \usepackage[normalem]{ulem}
 \usepackage[title]{appendix}
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}
 
 % In order to ensure Code syntaxing is done right
 \usepackage{listings}
@@ -31,7 +33,6 @@
 	breakatwhitespace=true,
 	tabsize=3
 }
-
 
 
 % The follwing changes the margin text size
@@ -170,11 +171,44 @@
 	\end{equation*}
 	
 	The equation of resistance can then be obtained by a similar approach \marginpar{refer to footnote 9}.
-	\linebreak
+	
+	\paragraph{Proving uniqueness and existence} \textbf{[Srishti]} 
+	It is of academic interest to prove that there exists an unique support and resistance trendline in the given data. We formalize this concept as follows. 
+
+	 
+	\begin{theorem}
+		There exists a support line for a time series data. For a given support line $L_s$, $(g_1,L(g_1))\in C(A \cap L_s)$, where $(g_1,S_{g_1})$ is the center of gravity of $\{ S_t\}$. Furthermore, let $t^*=argmin  \{S_t\}$ and $t^*\ne g_1$, then the support line is unique
+	\end{theorem}
+	
+	\begin{proof}
+		$A=\{(t,S_t)|1\leq t\leq N\}$, $\# A<\infty$ \\
+		$S_{t^*}=$min$\{ S_t\}$\\
+		Consider the line $L:y=S_{t^*}$.
+
+		\textbf{Case 1}: $t^*<g_1$\\
+		$X_o=\{(t,S_t)|t\geq g_1\}$\\
+		We rotate the line $L$ in counter clockwise direction.
+		Let $\theta_o$ be the angle rotated such that the first $t_1\in X_o$ satisfies the equation of line $L$.\\
+		\textbf{Subcase 1}: $t_1>g_1$\\
+		In this case, we have found the required support.\\
+		\textbf{Subcase 2}: $t_1<g_1$\\
+		We replace $t^*$ by $t_1$ and repeat the same procedure until we get $t\in X_o$. We are guaranteed to find such a $t$ as $A$ is a finite set.\\
+		
+		\textbf{Case 2}: $t^*>g_1$\\
+		$Y_o=\{(t,S_t)|t\leq g_1\}$\\
+		We rotate the line $L$ in clockwise direction. Let $\omega_o$ is the angle rotated such that first $t_1\in Y_o$ satisfies the equation of line $L$. Following similar arguments as above, we can establish that a support line exists.\\
+		
+		\textbf{Case 3}:$t^*=g_1$\\
+		In this case, we consider all the points in the set $A\ \{g_1\}$. Following the same procedure as above, we get a support line for $\{S_t\}$.\\
+		
+		\noindent
+		We now prove the uniqueness of the support when $t^*\ne g_1$.
+		By the definition of support, we know that all the points of $\{S_t\}$ must lie above the support. Also, by the hypothesis condition we have, $(g_1,L(g_1))\in C(A \cap L_s)$. Therefore, the support line is unique.
+	\end{proof}
 	
 	\textbf{Empirical Distribution of $\delta^+(l)$ and $\delta^-(l)$}: It is important to revisit the motivation for the preceeding analysis. We essentially desired a way using which we could check the reliability of the trendlines obtained. What we essentially mean by the term reliability is, how long (i.e, for how many time steps) will the price movements be contained within the spread of lines of support and resistance. Extending this idea a bit more, we choose to analyse the data in varying slices while keeping a some parameter, constant, throughout the duration of the analysis. 
 	\paragraph{}
-	For example, if we are given soem data series with 200 data points, recall, we had initially endeavored to compute the trendlines given some particular value of $l$, the lag parameter. Lets, for the sake of this example, assume that the chosen value of $l$ is 50. Then it follows that we could have constructed trendlines for the data in any of the 150 $sliding$ $windows$ created\footnote{Add a representative figure???}. Thus, we can have a total of 150 such pairs of trendlines for the given value of $l$. We formalize this in the following paragraph.
+	For example, if we are given some data series with 200 data points, recall, we had initially endeavored to compute the trendlines given some particular value of $l$, the lag parameter. Lets, for the sake of this example, assume that the chosen value of $l$ is 50. Then it follows that we could have constructed trendlines for the data in any of the 150 $sliding$ $windows$ created\footnote{Add a representative figure???}. Thus, we can have a total of 150 such pairs of trendlines for the given value of $l$. We formalize this in the following paragraph.
 	
 	\paragraph{}
 	Given any value of $l$, we say $\delta^+(l)$ represents the number of time steps the data series has obeyed the computed resistance trendline. Analogously, we say, $\delta^-(l)$ represents the number of time steps the data series obeys the computed support trendline. As discussed in the preceeding section, for a given value of $l$, the values taken by $\delta^+(l)$ and $\delta^-(l)$ are treated as random series, i.e, 
@@ -201,58 +235,109 @@
 		\label{Figure 4}
 	\end{figure}
 	
-	\pagebreak
-	
-	\section{TO BE EDITED P1: Srishti}
-	
-	
-	\noindent
-	\textbf{Theorem}: There exists a support line for a time series data. For a given support line $L_s$, $(g_1,L(g_1))\in C(A \cap L_s)$, where $(g_1,S_{g_1})$ is the center of gravity of $\{ S_t\}$. Furthermore, let $t^*=argmin S_t$ and $t^*\ne g_1$, then the support line is unique.\\
-	
-	\noindent
-	\textbf{Proof}: $A=\{(t,S_t)|1\leq t\leq N\}$, $\# A<\infty$\\
-	$S_{t^*}=min\{ S_t\}$\\
-	Consider the line $L:y=S_{t^*}$.\\
-	
-	\textbf{Case 1}: $t^*<g_1$\\
-	$X_o=\{(t,S_t)|t\geq g_1\}$\\
-	We rotate the line $L$ in counter clockwise direction.
-	Let $\theta_o$ be the angle rotated such that the first $t_1\in X_o$ satisfies the equation of line $L$.\\
-	\textbf{Subcase 1}: $t_1>g_1$\\
-	In this case, we have found the required support.\\
-	\textbf{Subcase 2}: $t_1<g_1$\\
-	We replace $t^*$ by $t_1$ and repeat the same procedure until we get $t\in X_o$. We are guaranteed to find such a $t$ as $A$ is a finite set.\\
-	
-	\textbf{Case 2}: $t^*>g_1$\\
-	$Y_o=\{(t,S_t)|t\leq g_1\}$\\
-	We rotate the line $L$ in clockwise direction. Let $\omega_o$ is the angle rotated such that first $t_1\in Y_o$ satisfies the equation of line $L$. Following similar arguments as above, we can establish that a support line exists.\\
-	
-	\textbf{Case 3}:$t^*=g_1$\\
-	In this case, we consider all the points in the set $A\ \{g_1\}$. Following the same procedure as above, we get a support line for $\{S_t\}$.\\
-	
-	\noindent
-	We now prove the uniqueness of the support when $t^*\ne g_1$.
-	By the definition of support, we know that all the points of $\{S_t\}$ must lie above the support. Also, by the hypothesis condition we have, $(g_1,L(g_1))\in C(A \cap L_s)$. Therefore, the support line is unique.
-	
-	
+	It now follows that for a given value of $l$; we can have atmost $(n-l)$ points, ie, there are atmost ${n-l}$ values of $\delta$.  We can plot the empirical distributions for each given value of $l$ and analyse the results to find out the optimal choice that one should make for $l$. 
 	
 	\pagebreak
 	
-	\section{TO BE EDITED P2: Purva}
 	
-		\begin{figure}[h!]
-			\centering
-			\includegraphics[width=0.8\textwidth]{emp_cdf_apple_c}
-			\caption{CDF Obtained after simulation}
-			\label{Figure 5}
-		\end{figure}
+	
+	Now that we have laid down the necessary groundwork, in the next section, we formalize the pseudo code version of the analysis that is conducted on any given data series. 
+	
+	\section{Approaching the data; Algorithmically}
+	\paragraph{}
+	We write the pseudocode in a modular form; ie; outlining the process in a block format.
+	
+	\paragraph[Finding the trendline]{Step 1} Finding the trendlines 
+	
+		\begin{lstlisting}
 		
+		# The SnR module
+		# Pseudocode for Generating the Support and Resistance Trendlines
+		
+		#INPUT = Array of Price points, value of 'l',  & 't'
+		
+		def snr():
+		
+		# Code
+		if 'l' > 't'; 
+			return ()
+		else;
+			pass
+		
+		for ('l' & 't'); 
+			Construct Sliding Window till 't-l'
+			S = #Support
+			R = #Resistance 
+			
+			#NOTE: Computed using the formulae described above
+		end
+		
+		for (S & R)
+			delta_p = # value(s) of t at which price point crosses R
+			delta_m = # value(s) of t for which price point crosses S
+		
+		return(S, R)
+		
+		
+		#OUTPUT =  Equation of trendlines; based on 'l' & 't' ; & the values of delta_p and delta_m
+		
+		\end{lstlisting}
+	
+	\paragraph{Step 2} Computing $\delta^-(l)$ random series
+	
+		\begin{lstlisting}
+			
+			# The delta module
+			# Pseudocode to generate the random series delta for varying t
+			def deltaser():
+			
+			#INPUT : value of 't' and 'l'
+			
+				random_series = []
+				
+				for i in range(t, t-l)
+					p = snr(data, l, i)
+					random_series.append(p)
+					
+				return (random_series)
+		
+		\end{lstlisting}
+		
+	\paragraph{Step 3} Computing empirical distribution
+	
+		\begin{lstlisting}
+			# Pseudo Code for Computing the Empirical Distribution
+			#Input = Output of deltaser() function
+			
+			for i in range(1, n)
+				sort(deltaser(i))
+				
+				val = max(deltaser(i))
+				plotvalues = val/length(deltaser(i))
+			
+			empirical_plot = plot(plotvalues)	
+			return (empiricial_plot)
+			
+			
+				
+		\end{lstlisting}
+		
+	\section{Actualizing the Algorithm}
+	
+	\paragraph{}
+	\textbf{[Purva]} We obtained data of the stock movement of Apple Inc. from NASDAQ. The data was then cleaned and the code attached in the appendix was used to generate the following plot representing the empirical distribution.
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.65\textwidth]{emp_cdf_apple_c}
+		\caption{CDF Obtained after simulation}
+		\label{Figure 5}
+	\end{figure}
 	
 	\pagebreak
-
 
 	\begin{appendices}
-			\section{Code for generating the cdf}
+			\section{[Purva]Code for generating the cdf}
 			
 			
 			\begin{lstlisting}
